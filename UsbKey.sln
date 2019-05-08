@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.168
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsbKey", "UsbKey\UsbKey.csproj", "{73C26E9D-ED3F-4528-AFAF-F641924BE0C6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsbKeyManager", "UsbKeyManager\UsbKeyManager.csproj", "{E7C351F2-5600-491E-89EE-49D7CE841BDB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{73C26E9D-ED3F-4528-AFAF-F641924BE0C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73C26E9D-ED3F-4528-AFAF-F641924BE0C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73C26E9D-ED3F-4528-AFAF-F641924BE0C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73C26E9D-ED3F-4528-AFAF-F641924BE0C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7C351F2-5600-491E-89EE-49D7CE841BDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7C351F2-5600-491E-89EE-49D7CE841BDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7C351F2-5600-491E-89EE-49D7CE841BDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7C351F2-5600-491E-89EE-49D7CE841BDB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DA9A492B-20DA-4EAF-A938-2EAEC9F07CA7}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,68 @@
+﻿<Window x:Class="UsbKeyManager.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:material="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewmodel="clr-namespace:UsbKeyManager.ViewModel"
+        mc:Ignorable="d"
+        Title="UsbKey Manager"
+        Height="300" 
+        Width="300"
+        ResizeMode="CanMinimize"
+        Background="{DynamicResource MaterialDesignPaper}"
+        TextElement.FontFamily="{StaticResource MaterialDesignFont}"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}">
+
+    <Window.Resources>
+        <material:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" 
+                                               FalseValue="Visible" 
+                                               TrueValue="Collapsed"/>
+
+        <material:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverterReverse" 
+                                               FalseValue="Collapsed" 
+                                               TrueValue="Visible"/>
+    </Window.Resources>
+
+    <Window.DataContext>
+        <viewmodel:MainVM/>
+    </Window.DataContext>
+
+    <material:DialogHost Identifier="{Binding Identifier}">
+        <StackPanel Margin="15">
+            <ComboBox ItemsSource="{Binding Drivers}"
+                      SelectedItem="{Binding SelectedDriver}"
+                      material:HintAssist.IsFloating="True"
+                      material:HintAssist.Hint="Select the driver">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock>
+                            <TextBlock.Text>
+                                <MultiBinding StringFormat="{}{0} ({1})">
+                                    <Binding Path="Name" />
+                                    <Binding Path="Path" />
+                                </MultiBinding>
+                            </TextBlock.Text>
+                        </TextBlock>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+
+            <Button Content="Update" 
+                    Command="{Binding UpdateDriversCommand}"/>
+
+            <Button Content="Create key"
+                    Command="{Binding CreateKeyCommand}"/>
+
+            <Button Content="Remove key"
+                    Command="{Binding RemoveKeyCommand}"/>
+
+            <Button Content="Copy key to UsbKey"
+                    Command="{Binding CopyKeyCommand}"/>
+
+            <Button Content="Add to startup"
+                    Command="{Binding AddToStartupCommand}"/>
+        </StackPanel>
+    </material:DialogHost>
+
+</Window>

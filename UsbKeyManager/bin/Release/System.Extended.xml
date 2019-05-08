@@ -1,0 +1,548 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>System.Extended</name>
+    </assembly>
+    <members>
+        <member name="T:System.Linq.LinqExtenstion">
+            <summary>
+            Extensions for IEnumerable.
+            <para/>
+            Расширения для IEnumerable.
+            </summary>
+        </member>
+        <member name="M:System.Linq.LinqExtenstion.Join``1(System.Collections.Generic.IEnumerable{``0},System.String)">
+            <summary>
+            Joining collection in 1 string.
+            <para/>
+            Объединяет всю коллекцию в 1 строку с разделителем.
+            </summary>
+            
+            <typeparam name="T">
+            Collection type.
+            <para/>
+            Тип коллекции.
+            </typeparam>
+            
+            <param name="source">
+            Collection.
+            <para/>
+            Коллекция.
+            </param>
+            
+            <param name="separator">
+            Separator.
+            <para/>
+            Разделитель.
+            </param>
+            
+            <exception cref="T:System.ArgumentNullException"/>
+        </member>
+        <member name="M:System.Linq.LinqExtenstion.Chunk``1(System.Collections.Generic.IEnumerable{``0},System.Int32)">
+            <summary>
+            Split collection on chunks.
+            <para/>
+            Разделяет коллекцию на куски.
+            </summary>
+            
+            <typeparam name="T">
+            Collection type.
+            <para/>
+            Тип коллекции.
+            </typeparam>
+            
+            <param name="source">
+            Collection.
+            <para/>
+            Коллекция.
+            </param>
+            
+            <param name="chunkSize">
+            Chunk size.
+            <para/>
+            Размер куска.
+            </param>
+            
+            <exception cref="T:System.ArgumentNullException"/>
+            <exception cref="T:System.ArgumentException"/>
+        </member>
+        <member name="M:System.Linq.LinqExtenstion.Shuffle``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Shuffle all items.
+            <para/>
+            Возвращает коллекцию, которая содержит все элементы в случайном порядке.
+            </summary>
+            
+            <typeparam name="T">
+            Collection type.
+            <para/>
+            Тип коллекции.
+            </typeparam>
+            
+            <param name="source">
+            Collection.
+            <para/>
+            Коллекция.
+            </param>
+            <exception cref="T:System.ArgumentNullException"/>
+        </member>
+        <member name="M:System.Linq.LinqExtenstion.IsNullOrEmpty``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Check collection to empty or null.
+            <para/>
+            Определяет, содержит ли коллекция какие-либо элементы, либо коллекция равна null.
+            </summary>
+            
+            <typeparam name="T">
+            Collection type.
+            <para/>
+            Тип коллекции.
+            </typeparam>
+            
+            <param name="source">
+            Collection.
+            <para/>
+            Коллекция.
+            </param>
+        </member>
+        <member name="M:System.Linq.LinqExtenstion.IsEmpty``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Check collection to empty.
+            <para/>
+            Определяет, содержит ли коллекция какие-либо элементы.
+            </summary>
+            
+            <typeparam name="T">
+            Collection type.
+            <para/>
+            Тип коллекции.
+            </typeparam>
+            
+            <param name="source">
+            Collection.
+            <para/>
+            Коллекция.
+            </param>
+            <exception cref="T:System.ArgumentNullException"/>
+        </member>
+        <member name="M:System.Linq.LinqExtenstion.Pipe``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})">
+            <summary>
+            Performs the specified action on each item in the collection and returns the same list.
+            <para/>
+            Выполняет указанное действие с каждым элементом коллекции и возвращает этот же список.
+            </summary>
+            
+            <typeparam name="T">
+            Collection type.
+            <para/>
+            Тип коллекции.
+            </typeparam>
+            
+            <param name="source">
+            Collection.
+            <para/>
+            Коллекция.
+            </param>
+            
+            <param name="action">
+            A delegate that runs for each item in the collection.
+            <para/>
+            Делегат, выполняемый для каждого элемента коллекции.
+            </param>
+            <exception cref="T:System.ArgumentNullException"/>
+        </member>
+        <member name="M:System.Linq.LinqExtenstion.Append``1(System.Collections.Generic.IEnumerable{``0},``0)">
+            <summary>
+            Adding item to collection.
+            <para/>
+            Добавляет объект в коллекцию.
+            </summary>
+            
+            <typeparam name="T">
+            Collection type.
+            <para/>
+            Тип коллекции.
+            </typeparam>
+            
+            <param name="source">
+            Collection.
+            <para/>
+            Коллекция.
+            </param>
+            
+            <param name="item">
+            Item.
+            <para/>
+            Объект.
+            </param>
+            
+            <exception cref="T:System.ArgumentNullException"/>
+        </member>
+        <member name="M:System.Linq.LinqExtenstion.Create``1(``0)">
+            <summary>
+            Create collection from 1 item.
+            <para/>
+            Создает последовательность из 1 объекта.
+            </summary>
+            
+            <typeparam name="T">
+            Collection type.
+            <para/>
+            Тип коллекции.
+            </typeparam>
+            
+            <param name="item">
+            Item.
+            <para/>
+            Объект.
+            </param>
+            
+            <exception cref="T:System.ArgumentNullException"/>
+        </member>
+        <member name="M:System.Linq.LinqExtenstion.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})">
+            <summary>
+            Performs the specified action on each item in the collection.
+            <para/>
+            Выполняет указанное действие с каждым элементом коллекции.
+            </summary>
+            
+            <typeparam name="T">
+            Collection type.
+            <para/>
+            Тип коллекции.
+            </typeparam>
+            
+            <param name="source">
+            Collection.
+            <para/>
+            Коллекция.
+            </param>
+            
+            <param name="action">
+            A delegate that runs for each item in the collection.
+            <para/>
+            Делегат, выполняемый для каждого элемента коллекции.
+            </param>
+            
+            <exception cref="T:System.ArgumentNullException"/>
+        </member>
+        <member name="M:System.Linq.LinqExtenstion.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0,System.Int32})">
+            <summary>
+            Performs the specified action on each item in the collection.
+            <para/>
+            Выполняет указанное действие с каждым элементом коллекции.
+            </summary>
+            
+            <typeparam name="T">
+            Collection type.
+            <para/>
+            Тип коллекции.
+            </typeparam>
+            
+            <param name="source">
+            Collection.
+            <para/>
+            Коллекция.
+            </param>
+            
+            <param name="action">
+            A delegate that runs for each item in the collection.
+            <para/>
+            Делегат, выполняемый для каждого элемента коллекции.
+            </param>
+            
+            <exception cref="T:System.ArgumentNullException"/>
+        </member>
+        <member name="M:System.Linq.LinqExtenstion.TakeSkip``1(System.Collections.Generic.IEnumerable{``0},System.Int32,System.Int32)">
+            <summary>
+            Takes the specified number of elements, then skips the specified number of elements.
+            <para/>
+            Берет указанное количество элементов, затем пропускает указанное количество элементов.
+            </summary>
+            
+            <typeparam name="T">
+            Collection type.
+            <para/>
+            Тип коллекции.
+            </typeparam>
+            
+            <param name="source">
+            Collection.
+            <para/>
+            Коллекция.
+            </param>
+            
+            <param name="take">
+            The number of items to be taken before skipping.
+            <para/>
+            Количество элементов, которые будут взяты до пропуска.
+            </param>
+            
+            <param name="skip">
+            Number of items to be skipped.
+            <para/>
+            Количество элементов, которые будут пропущены.
+            </param>
+            
+            <exception cref="T:System.ArgumentNullException"/>
+            <exception cref="T:System.ArgumentException"/>
+        </member>
+        <member name="T:System.AttributeExtenstion">
+            <summary>
+            Getting attributes.
+            <para/>
+            Получение атрибутов.
+            </summary>
+        </member>
+        <member name="M:System.AttributeExtenstion.GetAttribute``1(System.Object,System.String,System.GetAttributeType)">
+            <summary>
+            Getting attribute from class, field, property, method.
+            <para/>
+            Получение атрибута у класса, поля, свойства или метода.
+            </summary>
+            
+            <typeparam name="T">
+            Attribute type.
+            <para/>
+            Тип атрибута.
+            </typeparam>
+            
+            <param name="value">
+            Object.
+            <para/>
+            Объект.
+            </param>
+            
+            <param name="name">
+            Name field, property or method.
+            <para/>
+            If get a class attribute = null.
+            <para/>
+            Имя поля, свойства или метода.
+            <para/>
+            Если необходимо получить атрибут класса, то можно передать null.
+            </param>
+            
+            <param name="getType">
+            Getting type: class, field, property or method.
+            <para/>
+            Тип получения: из класса, поля, свойства или метода.
+            </param>
+            
+            <exception cref="T:System.ArgumentNullException"/>
+            <exception cref="T:System.MissingFieldException"/>
+            <exception cref="T:System.MissingMemberException"/>
+            <exception cref="T:System.MissingMethodException"/>
+            <exception cref="T:System.InvalidOperationException"/>
+        </member>
+        <member name="T:System.GetAttributeType">
+            <summary>
+            Type of search.
+            <para/>
+            Определяет тип поиска атрибута.
+            </summary>
+        </member>
+        <member name="F:System.GetAttributeType.Class">
+            <summary>
+            Get attribute from class.
+            <para/>
+            Получить атрибут класса.
+            </summary>
+        </member>
+        <member name="F:System.GetAttributeType.Field">
+            <summary>
+            Get attribute from field. 
+            <para/>
+            Получить атрибут поля.
+            </summary>
+        </member>
+        <member name="F:System.GetAttributeType.Property">
+            <summary>
+            Get attribute from property.
+            <para/>
+            Получить атрибут свойства.
+            </summary>
+        </member>
+        <member name="F:System.GetAttributeType.Method">
+            <summary>
+            Get attribute from method.
+            <para/>
+            Получить атрибут метода.
+            </summary>
+        </member>
+        <member name="T:System.ByteExtenstion">
+            <summary>
+            Extensions for byte array.
+            <para/>
+            Расширения для массива байт.
+            </summary>
+        </member>
+        <member name="M:System.ByteExtenstion.GetBase64(System.Byte[])">
+            <summary>
+            Getting base64 string from byte array.
+            <para/>
+            Получение строки base64 из массива байт.
+            </summary>
+            
+            <param name="array">
+            Array.
+            <para/>
+            Массив.
+            </param>
+            
+            <exception cref="T:System.ArgumentNullException"/>
+        </member>
+        <member name="M:System.ByteExtenstion.GetBase64(System.String)">
+            <summary>
+            Getting byte array from string in base64 format.
+            <para/>
+            Получение массива байт из строки в формате base64.
+            </summary>
+            
+            <param name="base64string">
+            String in base64 format.
+            <para/>
+            Строка в формате base64.
+            </param>
+            
+            <exception cref="T:System.ArgumentNullException"/>
+            <exception cref="T:System.FormatException"/>
+        </member>
+        <member name="M:System.ByteExtenstion.GetHash(System.Byte[],System.Security.Cryptography.HashAlgorithm)">
+            <summary>
+            Getting hash from byte array.
+            <para/>
+            Получение хэша из массива байт.
+            </summary>
+            <param name="array">
+            Byte array.
+            <para/>
+            Массив байт.
+            </param>
+            
+            <param name="hash">
+            Hash algorithm.
+            <para/>
+            Хэш алгоритм.
+            </param>
+            
+            <exception cref="T:System.ArgumentNullException"/>
+            <exception cref="T:System.ObjectDisposedException"/>
+        </member>
+        <member name="T:System.StringExtenstion">
+            <summary>
+            Расширения для строки.
+            </summary>
+        </member>
+        <member name="M:System.StringExtenstion.IsEmpty(System.String)">
+            <summary>
+            String check for: empty, spaces, null.
+            <para/>
+            Проверка строки на: пустоту, пробелы, null.
+            </summary>
+            
+            <param name="str">
+            String.
+            <para/>
+            Строка.
+            </param>
+        </member>
+        <member name="M:System.StringExtenstion.IsMatch(System.String,System.String)">
+            <summary>
+            Check the string with a regular expression.
+            <para/>
+            Проверка строки регулярным выражением.
+            </summary>
+            
+            <param name="str">
+            String.
+            <para/>
+            Строка.
+            </param>
+            
+            <param name="pattern">
+            Regex pattern.
+            <para/>
+            Паттерн регулярного выражения.
+            </param>
+            
+            <exception cref="T:System.ArgumentNullException"/>
+            <exception cref="T:System.ArgumentException"/>
+        </member>
+        <member name="M:System.StringExtenstion.GetBytes(System.String,System.Text.Encoding)">
+            <summary>
+            Convert string to bytes.
+            <para/>
+            Получить массив байт из строки.
+            </summary>
+            
+            <param name="str">
+            String.
+            <para/>
+            Строка.
+            </param>
+            
+            <param name="encoding">
+            Encoding, default value: UTF8.
+            <para/>
+            Кодировка, стандартное значение: UTF8.
+            </param>
+            
+            <exception cref="T:System.ArgumentNullException"/>
+        </member>
+        <member name="M:System.StringExtenstion.GetHash(System.String,System.Security.Cryptography.HashAlgorithm,System.Text.Encoding)">
+            <summary>
+            Getting hash from string.
+            <para/>
+            Получение хэша из строки.
+            </summary>
+            
+            <param name="str">
+            String.
+            <para/>
+            Строка.
+            </param>
+            
+            <param name="hash">
+            Hash algorithm.
+            <para/>
+            Хэш алгоритм.
+            </param>
+            
+            <param name="encoding">
+            Encoding, default value: UTF8.
+            <para/>
+            Кодировка, стандартное значение: UTF8.
+            </param>
+            
+            <exception cref="T:System.ArgumentNullException"/>
+        </member>
+        <member name="M:System.StringExtenstion.GetStringHash(System.String,System.Security.Cryptography.HashAlgorithm,System.Text.Encoding,System.String)">
+            <summary>
+            Getting hash from string in string format.
+            <para/>
+            Получение хэша из строки в виде строки.
+            </summary>
+            
+            <param name="str">
+            String.
+            <para/>
+            Строка.
+            </param>
+            
+            <param name="hash">
+            Hash algorithm.
+            <para/>
+            Хэш алгоритм.
+            </param>
+            
+            <param name="encoding">
+            Encoding, default value: UTF8.
+            <para/>
+            Кодировка, стандартное значение: UTF8.
+            </param>
+            
+            <exception cref="T:System.ArgumentNullException"/>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="UsbKeyManager.View.NewKeyDialog"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:material="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d">
+    
+    <StackPanel Margin="5"
+                Width="150">
+        <TextBox Text="{Binding KeyData}"
+                 material:HintAssist.IsFloating="True"
+                 material:HintAssist.Hint="Key data"/>
+
+        <Button Content="Ok"
+                Command="{Binding CloseDialogCommand}"/>
+    </StackPanel>
+    
+</UserControl>
